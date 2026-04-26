@@ -1,0 +1,45 @@
+<div class="card">
+
+  <h3 class="nombre">{{ curso()?.nombre }}</h3>
+
+  <div class="info">
+    <p><span> Docente:</span> {{ curso()?.docente }}</p>
+    <p><span> Créditos:</span> {{ curso()?.creditos }}</p>
+    <p><span> Horario:</span> {{ curso()?.horario }}</p>
+  </div>
+
+</div>
+<style>
+  .card {
+  background: linear-gradient(135deg, #ffffff, #f5f7ff);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+  border: 1px solid #e6e9f2;
+  color: #1f2937; /* texto principal oscuro */
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.nombre {
+  color: #1d4ed8; /* azul más vivo */
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.info p {
+  margin: 6px 0;
+  color: #374151; /* gris oscuro legible */
+  font-size: 14px;
+}
+
+.info span {
+  font-weight: 600;
+  color: #111827; /* casi negro para etiquetas */
+}
+</style>

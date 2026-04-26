@@ -1,15 +1,47 @@
-<div class="navbar bg-base-100 shadow-sm">
+<div class="navbar bg-base-100 shadow-sm fixed top-0  left-0 w-full z-50">
+
   <div class="flex-none">
-    <button class="btn btn-square btn-ghost">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block h-5 w-5 stroke-current"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg>
+    <button class="btn btn-square btn-ghost" (click)="toggleMenu()">
+      ☰
     </button>
   </div>
+
   <div class="flex-1">
     <a class="btn btn-ghost text-xl">Panel de cursos</a>
   </div>
-  <div class="flex-none">
-    <button class="btn btn-square btn-ghost">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block h-5 w-5 stroke-current"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path> </svg>
+
+  <div class="flex-none relative">
+    <button class="btn btn-square btn-ghost" (click)="toggleOptions()">
+      ⋮
     </button>
+
+    <div *ngIf="isOptionsOpen"
+      class="absolute right-0 mt-2 w-48 bg-base-100 shadow-lg rounded-box p-2">
+      <a class="block p-2 hover:bg-gray-100">Perfil</a>
+      <a class="block p-2 hover:bg-gray-100">Configuración</a>
+      <a class="block p-2 text-red-500 hover:bg-gray-100">Salir</a>
+    </div>
   </div>
 </div>
+
+<div *ngIf="isMenuOpen"
+  class="absolute top-16 left-0 w-52 bg-base-100 shadow-lg rounded-box p-3">
+  <a class="block p-2 hover:bg-gray-100">Inicio</a>
+  <a class="block p-2 hover:bg-gray-100" href="/cursos">Cursos</a>
+  <a class="block p-2 hover:bg-gray-100">Docentes</a>
+</div>
+
+<style>
+  :host {
+  display: block;
+}
+
+a {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+a:hover {
+  transform: translateX(2px);
+}
+</style>

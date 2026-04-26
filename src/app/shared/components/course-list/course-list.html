@@ -1,1 +1,13 @@
-<p>course-list works!</p>,
+<div class="contenedor pt-20">
+  <h2 class="titulo font-bold text-3xl ">Lista de Cursos</h2>
+
+  <div class="grid">
+
+    <app-course-card
+      *ngFor="let curso of cursos"
+      [curso]="curso">
+    </app-course-card>
+
+  </div>
+
+</div>
